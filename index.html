@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Schools Workshop Series — GovHub AI Services</title>
+  <meta name="description" content="Resources and recordings from the GovHub AI Services workshop series for New Zealand schools.">
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --surface-alt: #1B1B1B;
+      --text: #F5F5F5;
+      --text-muted: #B8B8B8;
+      --teal: #28667C;
+      --mint: #3DA89A;
+      --mint-bright: #6BD4C7;
+      --border: #2A2A2A;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Calibri, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* Header: logo + H1 inline on desktop, stacked on mobile */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-wrap {
+      background: #ffffff;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    header img {
+      max-height: 64px;
+      width: auto;
+      display: block;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 600;
+      margin: 0;
+      color: var(--mint);
+      line-height: 1.25;
+    }
+
+    .intro {
+      margin: 1.5rem 0 2rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 70ch;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--teal);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) td { background: var(--surface-alt); }
+    tbody tr:hover td { background: rgba(61, 168, 154, 0.07); }
+
+    .workshop-title { font-weight: 600; }
+
+    a {
+      color: var(--mint);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover, a:focus { color: var(--mint-bright); }
+    a:focus-visible {
+      outline: 2px solid var(--mint-bright);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile: stack header, collapse table to cards */
+    @media (max-width: 640px) {
+      header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+      table, thead, tbody, th, td, tr { display: block; width: 100%; }
+      thead { position: absolute; left: -9999px; }  /* hide headers, keep semantics */
+      table { border: none; background: transparent; }
+
+      tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        overflow: hidden;
+      }
+      tbody tr:nth-child(even) td { background: transparent; }
+
+      td {
+        border-bottom: 1px solid var(--border);
+        padding: 0.75rem 1rem 0.75rem 40%;
+        position: relative;
+        min-height: 2.75rem;
+      }
+      td:last-child { border-bottom: none; }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 0.75rem;
+        font-weight: 600;
+        color: var(--mint);
+        width: 35%;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <span class="logo-wrap">
+        <img src="./govhub-ai-services-logo.png" alt="GovHub AI Services">
+      </span>
+      <h1>AI in Schools Workshop Series</h1>
+    </header>
+
+    <p class="intro">Access resources and recordings from the GovHub AI Services workshop series for New Zealand schools.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Workshop</th>
+          <th scope="col">Resources</th>
+          <th scope="col">Recording</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ============================================================
+             WORKSHOP 1 — example of Pattern A: workshop name wrapped in <a>
+             (use this pattern when a dedicated workshop page exists)
+             ============================================================ -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            <!-- Pattern A: linked workshop title -->
+            <a href="#">Workshop 1 — AI Essentials and Quick Wins: Planning, Resources and Feedback</a>
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- ============================================================
+             WORKSHOP 2 — example of Pattern B: plain-text workshop name
+             (use this pattern when there is no dedicated workshop page)
+             ============================================================ -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            <!-- Pattern B: plain text, no wrapping <a> -->
+            Workshop 2 — Responsible and Compliant AI Use in NZ Schools
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 3 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 3 — AI Readiness Snapshot: Where Is Our School Now?
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 4 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 4 — Effective Prompt Design for NZ Classrooms
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 5 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 5 — Designing AI-Enhanced Lessons and Assessment
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 6 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 6 — Practical AI &ldquo;Assistants&rdquo; for School Workflows
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 7 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 7 — AI Governance and Risk Management for School Leaders
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 8 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 8 — Monitoring the Impact of AI on Teaching and Learning
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+        <!-- WORKSHOP 9 -->
+        <tr>
+          <td data-label="Workshop" class="workshop-title">
+            Workshop 9 — Building Internal AI Capability and Professional Learning
+          </td>
+          <td data-label="Resources">
+            <!-- TODO: replace href with slide deck / handout URL -->
+            <a href="#">Download slides (PDF)</a>
+          </td>
+          <td data-label="Recording">
+            <!-- TODO: replace href with YouTube recording URL -->
+            <a href="#">Watch recording (YouTube)</a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <footer>
+      &copy; <span id="year"></span> GovHub AI Services
+    </footer>
+
+  </div>
+
+  <script>
+    // Footer year — kept as a tiny inline script so the page stays single-file
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
