@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI in Schools Workshop Series — GovHub AI Services</title>
-  <meta name="description" content="Resources and recordings from the GovHub AI Services workshop series for New Zealand schools.">
+  <meta name="description" content="Information about the GovHub AI Services workshop series for New Zealand schools. Resources are emailed directly to registered participants.">
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap">
@@ -12,7 +13,6 @@
     :root {
       --bg: #0A0A0A;
       --surface: #141414;
-      --surface-alt: #1B1B1B;
       --text: #F5F5F5;
       --text-muted: #B8B8B8;
       --teal: #28667C;
@@ -22,7 +22,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { -webkit-text-size-adjust: 100%; }
 
     body {
@@ -34,12 +33,11 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 2rem 1.5rem 3rem;
     }
 
-    /* Header: logo + H1 inline on desktop, stacked on mobile */
     header {
       display: flex;
       align-items: center;
@@ -72,43 +70,24 @@
       line-height: 1.25;
     }
 
-    .intro {
-      margin: 1.5rem 0 2rem;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 70ch;
-    }
-
-    /* Table styling */
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .notice {
+      margin: 2rem 0;
+      padding: 1.5rem 1.75rem;
       background: var(--surface);
       border: 1px solid var(--border);
+      border-left: 4px solid var(--mint);
       border-radius: 6px;
-      overflow: hidden;
     }
 
-    th, td {
-      padding: 1rem 1.25rem;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border);
+    .notice p { margin: 0 0 1rem; }
+    .notice p:last-child { margin-bottom: 0; }
+
+    .lede {
+      font-size: 1.1rem;
+      color: var(--text);
     }
 
-    th {
-      background: var(--teal);
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
-
-    tbody tr:last-child td { border-bottom: none; }
-    tbody tr:nth-child(even) td { background: var(--surface-alt); }
-    tbody tr:hover td { background: rgba(61, 168, 154, 0.07); }
-
-    .workshop-title { font-weight: 600; }
+    .body-text { color: var(--text-muted); }
 
     a {
       color: var(--mint);
@@ -130,43 +109,8 @@
       font-size: 0.9rem;
     }
 
-    /* Mobile: stack header, collapse table to cards */
     @media (max-width: 640px) {
       header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-
-      table, thead, tbody, th, td, tr { display: block; width: 100%; }
-      thead { position: absolute; left: -9999px; }  /* hide headers, keep semantics */
-      table { border: none; background: transparent; }
-
-      tr {
-        margin-bottom: 1rem;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: var(--surface);
-        overflow: hidden;
-      }
-      tbody tr:nth-child(even) td { background: transparent; }
-
-      td {
-        border-bottom: 1px solid var(--border);
-        padding: 0.75rem 1rem 0.75rem 40%;
-        position: relative;
-        min-height: 2.75rem;
-      }
-      td:last-child { border-bottom: none; }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 1rem;
-        top: 0.75rem;
-        font-weight: 600;
-        color: var(--mint);
-        width: 35%;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-      }
     }
   </style>
 </head>
@@ -180,154 +124,11 @@
       <h1>AI in Schools Workshop Series</h1>
     </header>
 
-    <p class="intro">Access resources and recordings from the GovHub AI Services workshop series for New Zealand schools.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Workshop</th>
-          <th scope="col">Resources</th>
-          <th scope="col">Recording</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- WORKSHOP 1 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 1 — AI Essentials and Quick Wins: Planning, Resources and Feedback
-          </td>
-          <td data-label="Resources">
-            <a href="https://drive.google.com/file/d/19wXiAlC0DWznfJjZkjbbJoBDC3Ep3pz-/view?usp=drive_link" target="_blank" rel="noopener">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 2 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 2 — Responsible and Compliant AI Use in NZ Schools
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 3 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 3 — AI Readiness Snapshot: Where Is Our School Now?
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 4 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 4 — Effective Prompt Design for NZ Classrooms
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 5 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 5 — Designing AI-Enhanced Lessons and Assessment
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 6 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 6 — Practical AI &ldquo;Assistants&rdquo; for School Workflows
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 7 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 7 — AI Governance and Risk Management for School Leaders
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 8 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 8 — Monitoring the Impact of AI on Teaching and Learning
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-        <!-- WORKSHOP 9 -->
-        <tr>
-          <td data-label="Workshop" class="workshop-title">
-            Workshop 9 — Building Internal AI Capability and Professional Learning
-          </td>
-          <td data-label="Resources">
-            <!-- TODO: replace href with workshop resources URL -->
-            <a href="#">Workshop Resources</a>
-          </td>
-          <td data-label="Recording">
-            <!-- TODO: replace href with Fathom video URL -->
-            <a href="#">Workshop Video</a>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
+    <div class="notice">
+      <p class="lede">Resources and recordings for this workshop series are emailed directly to registered participants.</p>
+      <p class="body-text">If you are registered for a workshop, you will receive your resources the day before the session and the recording the day after. To register, visit the GovHub AI Services page at <a href="https://tewhakaroputanga.org.nz/our-services-2/ai-services" target="_blank" rel="noopener">tewhakaroputanga.org.nz/our-services-2/ai-services</a>.</p>
+      <p class="body-text">If you have not received your resources, please contact the workshop organiser.</p>
+    </div>
 
     <footer>
       &copy; <span id="year"></span> GovHub AI Services
@@ -336,7 +137,6 @@
   </div>
 
   <script>
-    // Footer year — kept as a tiny inline script so the page stays single-file
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
